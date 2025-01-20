@@ -32,6 +32,10 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
 <!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
 _Motion Livestream_ -->
 
+<video width="320" height="240" controls>
+  <source src="securityCam.mov" type="video/mp4">
+</video>
+
 ---
 
 ## Linux History
@@ -909,11 +913,26 @@ Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{
 
 ## Challenges faced
 
-Some of the issues that we encountered were:
-- the wifi being too slow in school
-- the camera not being detected
-- some of the `apt-get install` packages weren't properly being downloaded
-- the `motion.conf`{: .filepath} file was extremely vague as to what certain properties did
-    - had to read through a lot of different stack exchange posts and documentation to understand
-- the recording would only save as a file on the Pi and not get streamed to the local ip given
-- the stream would start but the quality was horrible
+**Some of the issues that we encountered were**:
+- The wifi being too slow in school
+- The camera not being detected
+- Some of the `apt-get install` packages weren't properly being downloaded
+- The `motion.conf`{: .filepath} file was extremely vague as to what certain properties did
+    - Had to read through a lot of different stack exchange posts and documentation to understand
+- The recording would only save as a file on the Pi and not get streamed to the local ip given
+- The stream would start but the quality was horrible
+    - The stream's frame rate was too low
+    - The stream's color was all wrong
+- The motion script had permission issues to access the `/tmp/motion.log`{: .filepath}
+
+---
+
+
+## Solutions
+
+**A list of the problem solving strategies that we used:**
+- Reading the official documentation
+- Reading stack exchange and raspberry pi forums
+- Testing out different solutions
+- Brainstorming and trying to understand logic
+- Watching explanatory videos
