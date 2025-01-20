@@ -21,12 +21,14 @@ image:
 
 # Materials list:
 > Hardware:
-    - SD Card
-    - Raspberry Pi
-    - USB Dynex 1.3 MP Camera
-    - USB Keyboard
-    - USB Mouse
-    - Monitor
+    > SD Card
+    > Raspberry Pi
+    > USB Dynex 1.3 MP Camera
+    > USB Keyboard
+    > USB Mouse
+    > Monitor
+
+
 > Software:
     - Raspbian OS (based off of Debian)
     - Motion Program (open-source)
