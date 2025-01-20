@@ -1,5 +1,5 @@
 ---
-title: First Post
+title: Security Camera
 date: 2025-01-19 16:44:40 -0500
 categories: [Projects]
 tags: [motion-detection, camera, comp-eng, bash]     # TAG names should always be lowercase
@@ -28,6 +28,7 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
     src='/securityCam.mp4' 
     types='mp4|mov'
     title='Video of test of Motion livestream'
+    autoplay=true
     %}
 
 <!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
