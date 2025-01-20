@@ -22,24 +22,24 @@ image:
 # Materials list:
 - ## Hardware:
     - SD Card
-    ![SD card image](/sdCard.webp)
+    ![SD card image](/sdCard.webp){: width="768" height="432"}
     - Raspberry Pi
-    ![Raspberry Pi 4 imgae](/raspberryPi.jpg)
+    ![Raspberry Pi 4 imgae](/raspberryPi.jpg){: width="768" height="432"}
     - USB Dynex 1.3 MP Webcam
-    ![Dynex Webcam image](/webcam.jpg)
+    ![Dynex Webcam image](/webcam.jpg){: width="768" height="432"}
     - USB Keyboard
-    ![USB Keyboard image](/keybaord.webp)
+    ![USB Keyboard image](/keyboard.webp){: width="768" height="432"}
     - USB Mouse
-    ![USB Keybaord image](/mouse.jpg)
+    ![USB Keybaord image](/mouse.jpg){: width="768" height="432"}
     - Monitor
-    ![Monitor image](/monitor.jpg)
+    ![Monitor image](/monitor.jpg){: width="768" height="432"}
 
 
 - ## Software:
     - Raspbian OS (based off of Debian)
-    ![Raspbian OS image](/raspbian.png)
+    ![Raspbian OS image](/raspbian.png){: width="768" height="432"}
     - Motion Program (open-source)
-    [Motion Program link](https://github.com/Motion-Project/motion)
+    [Motion Program link](https://github.com/Motion-Project/motion){: width="768" height="432"}
 
 ## Project layout and files on the Pi
 - `/Users`{: .filepath}
