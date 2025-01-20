@@ -19,12 +19,10 @@ media_subpath: assets/projectFiles
 # 👋 Hi there
 This is our final project. A security camera using the Raspberry Pi running Raspbian OS making use of the open-source motion framework.
 
-<!--{%
+{%
     include embed/video.html
-    src='/assets/projectFiles/IMG_2451.mov'
-    types='mov'
+    src='/assets/projectFiles/securityCam.mov'
     title='Video of motion Livestream'
     autoplay=true
     muted=true
     %}
--->
