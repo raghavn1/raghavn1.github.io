@@ -32,7 +32,7 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
 <!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
 _Motion Livestream_ -->
 
-{% include embed/video.html src='{/assets/projectFiles/seurityCam.mov}' %}
+{% include embed/video.html src='{/assets/projectFiles/seurityCam.mp4}' %}
 
 
 ---
