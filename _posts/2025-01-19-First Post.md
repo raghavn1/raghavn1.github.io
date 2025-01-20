@@ -30,7 +30,7 @@ This is the history file from the Raspberry Pi on the day of the setup. The main
 
 <!-- This is the code from the bash history-->
 
-```terminal
+```bash
 history
 ls
 clear
