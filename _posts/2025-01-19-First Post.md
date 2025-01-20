@@ -25,7 +25,7 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
 
 {%
     include embed/video.html
-    src='/assets/projectFiles/securityCam.mp4' 
+    src='/securityCam.mp4' 
     types='mp4|mov'
     title='Video of test of Motion livestream'
     %}
