@@ -9,10 +9,10 @@ author: raghav
 description: This is my first post about my computer engineering final project -- a motion detected camera using the Raspberry Pi.
 
 
-toc: false # turning off the table of contents
+toc: true # turning off the table of contents
 comments: false # Turning off comments on this post
 
-media_subpath: assets/projectFiles
+media_subpath: /assets
 
 ---
 
@@ -28,7 +28,9 @@ This is our final project. A security camera using the Raspberry Pi running Rasp
 
 This is the history file from the Raspberry Pi on the day of the setup. The main part of the project was to get the `motion.conf`{: .filepath} file correctly configured to our liking.
 
-```bash
+<!-- This is the code from the bash history-->
+
+```shell
 history
 ls
 clear
