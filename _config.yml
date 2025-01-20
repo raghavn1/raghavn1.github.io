@@ -16,7 +16,7 @@ timezone: America/Toronto
 
 title: Raghav # the main title
 
-tagline: My personal website portfolio! # it will display as the subtitle
+tagline: My personal portfolio website! # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, portfolio website for personal use.
