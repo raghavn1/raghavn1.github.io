@@ -23,16 +23,16 @@ image:
 # 👋 Hi there
 This is our final project for comp eng. A security camera using the Raspberry Pi running Raspbian OS making use of the open-source [motion](https://github.com/Motion-Project/motion) framework.
 
-<!--{%
+{%
     include embed/video.html
-    src='/assets/projectFiles/securityCam.mov' 
+    src='/assets/projectFiles/securityCam.mp4' 
     title='Video of test of Motion livestream'
-    %}-->
+    %}
 
 <!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
 _Motion Livestream_ -->
 
-{% include embed/video.html src='{/assets/projectFiles/seurityCam.mp4}' %}
+<!--{% include embed/video.html src='{/assets/projectFiles/seurityCam.mp4}' %}-->
 
 
 ---
