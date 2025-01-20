@@ -942,4 +942,4 @@ Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{
 
 ## Conclusion
     
-> The overall projetct was very enjoyable and a great learning opportunity. Although there were many challenges that were not very fun to fix, I was able to learn many new things about Linux and how the Raspberry Pi works.
+> The overall project was very enjoyable and a great learning opportunity. Although there were many challenges that were not very fun to fix, I was able to learn many new things about Linux and how the Raspberry Pi works.
