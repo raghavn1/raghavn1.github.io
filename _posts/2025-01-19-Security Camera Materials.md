@@ -42,14 +42,14 @@ image:
     [Motion Program link](https://github.com/Motion-Project/motion){: width="768" height="432"}
 
 ## Project layout and files on the Pi
-- ##### `/Users`{: .filepath}
-    - ##### `/etc`{: .filepath}
-        - ##### `/motion`{: .filepath}
-            - ##### `/motion.log`{: .filepath}
-    - ##### `/var`{: .filepath}
-        - ##### `/lib`{: .filepath}
-            - ##### `/motion`{: .filepath}
-                - ##### `/"VideoFileName.mp4"`{: .filepath}
-    - ##### `/tmp`{: .filepath}
-        - ##### `/motion`{: .filepath}
-            - ##### `/motion.log`{: .filepath}
+- #### `/Users`{: .filepath}
+    - #### `/etc`{: .filepath}
+        - #### `/motion`{: .filepath}
+            - #### `/motion.log`{: .filepath}
+    - #### `/var`{: .filepath}
+        - #### `/lib`{: .filepath}
+            - #### `/motion`{: .filepath}
+                - #### `/"VideoFileName.mp4"`{: .filepath}
+    - #### `/tmp`{: .filepath}
+        - #### `/motion`{: .filepath}
+            - #### `/motion.log`{: .filepath}
