@@ -30,7 +30,7 @@ This is the history file from the Raspberry Pi on the day of the setup. The main
 
 <!-- This is the code from the bash history-->
 
-```shell
+```terminal
 history
 ls
 clear
@@ -52,7 +52,6 @@ sudo apt-get install lolcat
 asldk;falskdfj | lolcat
 cat asdflkasdlf | lolcat
 sudo apt-get install cowsay
-cowsay "exion is gay" | lolcat
 apt-get install lolcat
 sudo apt-get lolcat
 sudo apt-get install help
