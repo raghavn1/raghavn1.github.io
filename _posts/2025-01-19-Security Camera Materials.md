@@ -1,5 +1,5 @@
 ---
-title: Security Camera
+title: Security Camera Materials and File Structure
 date: 2025-01-19 16:14:28 -0500
 categories: [Projects]
 tags: [camera, comp-eng, bash, hardware, usb]     # TAG names should always be lowercase
