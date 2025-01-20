@@ -707,11 +707,11 @@ sudo halt
 
 As you can see, most of the things that we changed were either the permissions of different folders/files that motion uses, or testing out different settings inside the `motion.conf`{: .filepath} file.
 
-#### `Motion.log`{: .filepath}
+### `Motion.log`{: .filepath}
 
-Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{:. filepath} file. The contents of this file are here below:
+Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{: .filepath} file. The contents of this file are here below:
 
-```js
+```log
 [0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Motion 4.5.1 Started
 [0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Using default log type (ALL)
 [0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Using log type (ALL) log level (NTC)
