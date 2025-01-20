@@ -29,10 +29,12 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
     title='Video of test of Motion livestream'
     %}-->
 
-![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
-_Motion Livestream_
+<!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
+_Motion Livestream_ -->
 
 ---
+
+## Linux History
 
 This is the history file from the Raspberry Pi on the day of the setup. The main part of the project was to get the `/etc/motion/motion.conf`{: .filepath} file correctly configured to our liking.
 
@@ -714,7 +716,7 @@ sudo halt
 
 As you can see, most of the things that we changed were either the permissions of different folders/files that motion uses, or testing out different settings inside the `motion.conf`{: .filepath} file.
 
-### `Motion.log`{: .filepath}
+## `Motion.log`{: .filepath}
 
 Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{: .filepath} file. The contents of this file are here below:
 
@@ -902,3 +904,16 @@ Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{
 [0:motion] [NTC] [ALL] [Jan 19 17:28:46] main: Motion terminating
 [0:motion] [NTC] [ALL] [Jan 19 17:28:46] motion_remove_pid: Closing logfile (/tmp/motion/motion.log).
 ```
+
+---
+
+## Challenges faced
+
+Some of the issues that we encountered were:
+- the wifi being too slow in school
+- the camera not being detected
+- some of the `apt-get install` packages weren't properly being downloaded
+- the `motion.conf`{: .filepath} file was extremely vague as to what certain properties did
+    - had to read through a lot of different stack exchange posts and documentation to understand
+- the recording would only save as a file on the Pi and not get streamed to the local ip given
+- the stream would start but the quality was horrible
