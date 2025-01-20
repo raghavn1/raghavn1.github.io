@@ -20,13 +20,13 @@ image:
 ---
 
 # Materials list:
-> Hardware:
-    > SD Card
-    > Raspberry Pi
-    > USB Dynex 1.3 MP Camera
-    > USB Keyboard
-    > USB Mouse
-    > Monitor
+> ## Hardware:
+    > ### SD Card
+    > ### Raspberry Pi
+    > ### USB Dynex 1.3 MP Camera
+    > ### USB Keyboard
+    > ### USB Mouse
+    > ### Monitor
 
 
 > Software:
