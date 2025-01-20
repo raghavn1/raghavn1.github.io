@@ -15,3 +15,4 @@ My name is Raghav Naduvakkat Areekara. I am a current Grade 11 student at Port C
 {: .prompt-info }
 
 > Click [here](https://raghavn1.github.io/posts/First-Post) to go to my security camera project
+{: .prompt-tip}
