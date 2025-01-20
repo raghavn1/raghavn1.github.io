@@ -23,6 +23,7 @@ This is our final project. A security camera using the Raspberry Pi running Rasp
     include embed/video.html
     src='/assets/projectFiles/securityCam.mov'
     title='Video of motion Livestream'
+    type='mov'
     autoplay=true
     muted=true
     %}
