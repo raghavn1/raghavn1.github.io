@@ -2,14 +2,14 @@
 title: First Post
 date: 2025-01-19 16:44:40 -0500
 categories: [Projects]
-tags: [motion-detection, camera, comp-eng]     # TAG names should always be lowercase
+tags: [motion-detection, camera, comp-eng, bash]     # TAG names should always be lowercase
 
-author: raghav
+authors: [raghav, matty]
 
 description: This is my first post about my computer engineering final project -- a motion detected camera using the Raspberry Pi.
 
 
-toc: true # turning off the table of contents
+toc: true # turning on the table of contents
 comments: false # Turning off comments on this post
 
 media_subpath: /assets
@@ -25,8 +25,9 @@ This is our final project. A security camera using the Raspberry Pi running Rasp
     title='Video of test of Motion livestream'
     %}
 
+---
 
-This is the history file from the Raspberry Pi on the day of the setup. The main part of the project was to get the `motion.conf`{: .filepath} file correctly configured to our liking.
+This is the history file from the Raspberry Pi on the day of the setup. The main part of the project was to get the `/etc/motion/motion.conf`{: .filepath} file correctly configured to our liking.
 
 <!-- This is the code from the bash history-->
 
@@ -700,4 +701,197 @@ clear
 cd
 exit
 sudo halt
+```
+
+---
+
+As you can see, most of the things that we changed were either the permissions of different folders/files that motion uses, or testing out different settings inside the `motion.conf`{: .filepath} file.
+
+#### `Motion.log`{: .filepath}
+
+Every time motion is run, it writes its actions to the `/tmp/motion/motion.log`{:. filepath} file. The contents of this file are here below:
+
+```js
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Motion 4.5.1 Started
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Using default log type (ALL)
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Using log type (ALL) log level (NTC)
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] become_daemon: Motion going to daemon mode
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_startup: Motion running as daemon process
+[0:motion] [NTC] [STR] [Jan 18 20:50:54] webu_start_strm: Starting all camera streams on port 8085
+[0:motion] [NTC] [STR] [Jan 18 20:50:54] webu_strm_ntc: Started camera 0 stream on port 8085
+[0:motion] [NTC] [STR] [Jan 18 20:50:54] webu_start_ctrl: Starting webcontrol on port 8080
+[0:motion] [NTC] [STR] [Jan 18 20:50:54] webu_start_ctrl: Started webcontrol on port 8080
+[0:motion] [NTC] [ENC] [Jan 18 20:50:54] ffmpeg_global_init: ffmpeg libavcodec version 59.37.100 libavformat version 59.27.100
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] translate_init: Language: English
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_start_thread: Camera ID: 0 is from /etc/motion/motion.conf
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] motion_start_thread: Camera ID: 0 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Jan 18 20:50:54] main: Waiting for threads to finish, pid: 725
+[1:ml1] [NTC] [ALL] [Jan 18 20:50:54] motion_init: Camera 0 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Jan 18 20:50:54] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Jan 18 20:50:54] v4l2_device_open: Using videodevice /dev/video0 and input -1
+[1:ml1] [ALR] [VID] [Jan 18 20:50:54] v4l2_device_open: Failed to open video device /dev/video0: No such file or directory
+[1:ml1] [ERR] [VID] [Jan 18 20:50:54] vid_start: V4L2 device failed to open
+[1:ml1] [WRN] [ALL] [Jan 18 20:50:54] motion_init: Could not fetch initial image from camera 
+[1:ml1] [WRN] [ALL] [Jan 18 20:50:54] motion_init: Motion continues using width and height from config file(s)
+[1:ml1] [NTC] [ALL] [Jan 18 20:50:54] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [NTC] [ALL] [Jan 18 20:50:54] image_ring_resize: Resizing pre_capture buffer to 20 items
+[1:ml1] [NTC] [ALL] [Jan 18 20:50:54] motion_loop: Thread exiting
+[0:motion] [NTC] [ALL] [Jan 18 20:50:55] main: Threads finished
+[0:motion] [NTC] [ALL] [Jan 18 20:50:55] main: Motion terminating
+[0:motion] [NTC] [ALL] [Jan 18 20:50:55] motion_remove_pid: Closing logfile (/tmp/motion.log).
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_startup: Motion 4.5.1 Started
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_startup: Using default log type (ALL)
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_startup: Using log type (ALL) log level (NTC)
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] become_daemon: Motion going to daemon mode
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_startup: Motion running as daemon process
+[0:motion] [NTC] [STR] [Jan 19 17:09:23] webu_start_strm: Starting all camera streams on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:09:23] webu_strm_ntc: Started camera 0 stream on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:09:23] webu_start_ctrl: Starting webcontrol on port 8080
+[0:motion] [NTC] [STR] [Jan 19 17:09:23] webu_start_ctrl: Started webcontrol on port 8080
+[0:motion] [NTC] [ENC] [Jan 19 17:09:23] ffmpeg_global_init: ffmpeg libavcodec version 59.37.100 libavformat version 59.27.100
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] translate_init: Language: English
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_start_thread: Camera ID: 0 is from /etc/motion/motion.conf
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] motion_start_thread: Camera ID: 0 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:09:23] main: Waiting for threads to finish, pid: 3029
+[1:ml1] [NTC] [ALL] [Jan 19 17:09:23] motion_init: Camera 0 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_device_open: Using videodevice /dev/video0 and input -1
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_device_capability: - VIDEO_CAPTURE
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_device_capability: - STREAMING
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_input_select: Name = "Camera 1"- CAMERA
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_norm_select: Device does not support specifying PAL/NTSC norm
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_try: Unable to use YU12 (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_select: Configuration palette index 17 (YU12) for 640x480 doesn't work.
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_select: Supported palettes:
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_select: (0) YUYV (YUYV 4:2:2)
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_select: (1) MJPG (Motion-JPEG)
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_try: Testing palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_set: Using palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:09:23] v4l2_pixfmt_select: Selected palette MJPG
+[1:ml1] [NTC] [ALL] [Jan 19 17:09:23] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [NTC] [ALL] [Jan 19 17:09:24] image_ring_resize: Resizing pre_capture buffer to 20 items
+[1:ml1] [NTC] [ALL] [Jan 19 17:09:24] motion_loop: Thread exiting
+[1:ml1] [NTC] [VID] [Jan 19 17:09:24] vid_close: Cleaning up V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:09:24] v4l2_cleanup: Closing video device /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:09:25] main: Threads finished
+[0:motion] [NTC] [ALL] [Jan 19 17:09:25] main: Motion terminating
+[0:motion] [NTC] [ALL] [Jan 19 17:09:25] motion_remove_pid: Closing logfile (/tmp/motion.log).
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_startup: Motion 4.5.1 Started
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_startup: Using default log type (ALL)
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_startup: Using log type (ALL) log level (NTC)
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] become_daemon: Motion going to daemon mode
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_startup: Motion running as daemon process
+[0:motion] [NTC] [STR] [Jan 19 17:21:03] webu_start_strm: Starting all camera streams on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:21:03] webu_strm_ntc: Started camera 0 stream on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:21:03] webu_start_ctrl: Starting webcontrol on port 8080
+[0:motion] [NTC] [STR] [Jan 19 17:21:03] webu_start_ctrl: Started webcontrol on port 8080
+[0:motion] [NTC] [ENC] [Jan 19 17:21:03] ffmpeg_global_init: ffmpeg libavcodec version 59.37.100 libavformat version 59.27.100
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] translate_init: Language: English
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_start_thread: Camera ID: 0 is from /etc/motion/motion.conf
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] motion_start_thread: Camera ID: 0 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:21:03] main: Waiting for threads to finish, pid: 3442
+[1:ml1] [NTC] [ALL] [Jan 19 17:21:03] motion_init: Camera 0 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_device_open: Using videodevice /dev/video0 and input -1
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_device_capability: - VIDEO_CAPTURE
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_device_capability: - STREAMING
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_input_select: Name = "Camera 1"- CAMERA
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_norm_select: Device does not support specifying PAL/NTSC norm
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_try: Unable to use YU12 (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_select: Configuration palette index 17 (YU12) for 640x480 doesn't work.
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_select: Supported palettes:
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_select: (0) YUYV (YUYV 4:2:2)
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_select: (1) MJPG (Motion-JPEG)
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_try: Testing palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_set: Using palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:21:03] v4l2_pixfmt_select: Selected palette MJPG
+[1:ml1] [NTC] [ALL] [Jan 19 17:21:03] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [CRT] [VID] [Jan 19 17:21:03] vid_mjpegtoyuv420p: Corrupt image ... continue
+[1:ml1] [NTC] [ALL] [Jan 19 17:21:05] image_ring_resize: Resizing pre_capture buffer to 20 items
+[1:ml1] [NTC] [ALL] [Jan 19 17:21:05] motion_loop: Thread exiting
+[1:ml1] [NTC] [VID] [Jan 19 17:21:05] vid_close: Cleaning up V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:21:05] v4l2_cleanup: Closing video device /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:21:06] main: Threads finished
+[0:motion] [NTC] [ALL] [Jan 19 17:21:06] main: Motion terminating
+[0:motion] [NTC] [ALL] [Jan 19 17:21:06] motion_remove_pid: Closing logfile (/tmp/motion.log).
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_startup: Motion 4.5.1 Started
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_startup: Using default log type (ALL)
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_startup: Using log type (ALL) log level (NTC)
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] become_daemon: Motion going to daemon mode
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_startup: Motion running as daemon process
+[0:motion] [NTC] [STR] [Jan 19 17:25:01] webu_start_strm: Starting all camera streams on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:25:01] webu_strm_ntc: Started camera 0 stream on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:25:01] webu_start_ctrl: Starting webcontrol on port 8080
+[0:motion] [NTC] [STR] [Jan 19 17:25:01] webu_start_ctrl: Started webcontrol on port 8080
+[0:motion] [NTC] [ENC] [Jan 19 17:25:01] ffmpeg_global_init: ffmpeg libavcodec version 59.37.100 libavformat version 59.27.100
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] translate_init: Language: English
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_start_thread: Camera ID: 0 is from /etc/motion/motion.conf
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] motion_start_thread: Camera ID: 0 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:25:01] main: Waiting for threads to finish, pid: 3554
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:01] motion_init: Camera 0 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_device_open: Using videodevice /dev/video0 and input -1
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_device_capability: - VIDEO_CAPTURE
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_device_capability: - STREAMING
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_input_select: Name = "Camera 1"- CAMERA
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_norm_select: Device does not support specifying PAL/NTSC norm
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_try: Unable to use YU12 (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_select: Configuration palette index 17 (YU12) for 640x480 doesn't work.
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_select: Supported palettes:
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_select: (0) YUYV (YUYV 4:2:2)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_select: (1) MJPG (Motion-JPEG)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_try: Testing palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_set: Using palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:01] v4l2_pixfmt_select: Selected palette MJPG
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:01] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [CRT] [VID] [Jan 19 17:25:01] vid_mjpegtoyuv420p: Corrupt image ... continue
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:03] image_ring_resize: Resizing pre_capture buffer to 20 items
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:03] motion_loop: Thread exiting
+[1:ml1] [NTC] [VID] [Jan 19 17:25:03] vid_close: Cleaning up V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:25:03] v4l2_cleanup: Closing video device /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:25:04] main: Threads finished
+[0:motion] [NTC] [ALL] [Jan 19 17:25:04] main: Motion terminating
+[0:motion] [NTC] [ALL] [Jan 19 17:25:04] motion_remove_pid: Closing logfile (/tmp/motion/motion.log).
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_startup: Motion 4.5.1 Started
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_startup: Using default log type (ALL)
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_startup: Using log type (ALL) log level (NTC)
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] become_daemon: Motion going to daemon mode
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_startup: Motion running as daemon process
+[0:motion] [NTC] [STR] [Jan 19 17:25:34] webu_start_strm: Starting all camera streams on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:25:34] webu_strm_ntc: Started camera 0 stream on port 8085
+[0:motion] [NTC] [STR] [Jan 19 17:25:34] webu_start_ctrl: Starting webcontrol on port 8080
+[0:motion] [NTC] [STR] [Jan 19 17:25:34] webu_start_ctrl: Started webcontrol on port 8080
+[0:motion] [NTC] [ENC] [Jan 19 17:25:34] ffmpeg_global_init: ffmpeg libavcodec version 59.37.100 libavformat version 59.27.100
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] translate_init: Language: English
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_start_thread: Camera ID: 0 is from /etc/motion/motion.conf
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] motion_start_thread: Camera ID: 0 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:25:34] main: Waiting for threads to finish, pid: 3571
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:34] motion_init: Camera 0 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_device_open: Using videodevice /dev/video0 and input -1
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_device_capability: - VIDEO_CAPTURE
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_device_capability: - STREAMING
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_input_select: Name = "Camera 1"- CAMERA
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_norm_select: Device does not support specifying PAL/NTSC norm
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_try: Unable to use YU12 (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_select: Configuration palette index 17 (YU12) for 640x480 doesn't work.
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_select: Supported palettes:
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_select: (0) YUYV (YUYV 4:2:2)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_select: (1) MJPG (Motion-JPEG)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_try: Testing palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_set: Using palette MJPG (640x480)
+[1:ml1] [NTC] [VID] [Jan 19 17:25:34] v4l2_pixfmt_select: Selected palette MJPG
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:34] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [CRT] [VID] [Jan 19 17:25:34] vid_mjpegtoyuv420p: Corrupt image ... continue
+[1:ml1] [NTC] [ALL] [Jan 19 17:25:36] image_ring_resize: Resizing pre_capture buffer to 20 items
+[1:ml1] [NTC] [ALL] [Jan 19 17:27:01] motion_detected: Motion detected - starting event 1.
+[1:ml1] [NTC] [EVT] [Jan 19 17:27:02] event_newfile: Writing movie to file: /var/lib/motion/Event-Number:01-Date:25-01-19Time:17-27-00.mp4
+[1:ml1] [NTC] [EVT] [Jan 19 17:28:05] event_newfile: Writing movie to file: /var/lib/motion/Event-Number:01-Date:25-01-19Time:17-28-05.mp4
+[1:ml1] [NTC] [ALL] [Jan 19 17:28:39] mlp_actions: End of event 1
+[1:ml1] [NTC] [ALL] [Jan 19 17:28:46] motion_loop: Thread exiting
+[1:ml1] [NTC] [VID] [Jan 19 17:28:46] vid_close: Cleaning up V4L2 device
+[1:ml1] [NTC] [VID] [Jan 19 17:28:46] v4l2_cleanup: Closing video device /dev/video0
+[0:motion] [NTC] [ALL] [Jan 19 17:28:46] main: Threads finished
+[0:motion] [NTC] [ALL] [Jan 19 17:28:46] main: Motion terminating
+[0:motion] [NTC] [ALL] [Jan 19 17:28:46] motion_remove_pid: Closing logfile (/tmp/motion/motion.log).
 ```
