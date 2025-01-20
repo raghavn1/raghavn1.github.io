@@ -32,9 +32,8 @@ This is our final project for comp eng. A security camera using the Raspberry Pi
 <!-- ![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
 _Motion Livestream_ -->
 
-<video width="320" height="240" controls>
-  <source src="securityCam.mov" type="video/mp4">
-</video>
+{% include embed/video.html src='{/assets/projectFiles/seurityCam.mov}' %}
+
 
 ---
 
