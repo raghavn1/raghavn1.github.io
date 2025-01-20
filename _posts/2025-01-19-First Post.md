@@ -12,18 +12,25 @@ description: This is my first post about my computer engineering final project -
 toc: true # turning on the table of contents
 comments: false # Turning off comments on this post
 
-media_subpath: /assets
+media_subpath: /assets/projectFiles
+
+image: 
+    path: motionStart.png
+    alt: Motion Livestream
 
 ---
 
 # 👋 Hi there
-This is our final project. A security camera using the Raspberry Pi running Raspbian OS making use of the open-source motion framework.
+This is our final project for comp eng. A security camera using the Raspberry Pi running Raspbian OS making use of the open-source [motion](https://github.com/Motion-Project/motion) framework.
 
-{%
+<!--{%
     include embed/video.html
     src='/assets/projectFiles/securityCam.mov' 
     title='Video of test of Motion livestream'
-    %}
+    %}-->
+
+![motion livestream picture](/assets/projectFiles/motionStart.png){: .shadow}
+_Motion Livestream_
 
 ---
 
