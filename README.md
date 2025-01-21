@@ -12,11 +12,11 @@
 
 - Home page
 - Categories page
-  Search through the different post categories on the site
+  - Search through the different post categories on the site
 - Archives page
-  View a timeline of published posts
+  - View a timeline of published posts
 - About page
-  Little explanatory page about myself
+  - Little explanatory page about myself
 
 ## Credits
 
